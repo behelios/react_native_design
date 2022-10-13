@@ -1,0 +1,161 @@
+import React from "react"
+import { View, Text, StyleSheet,Image, Modal, Dimensions, ImageBackground, }from "react-native"
+
+const {height,width}=Dimensions.get("window")
+
+export default function mensLeague(){
+  return(
+    <View style={{flex: 1}}>
+        <View>
+        <ImageBackground source={{uri: "https://img.freepik.com/premium-vector/succeed-business-man-winning-competition-getting-reward-prize-achievement-goal-inspiration-hard-work-result-person-with-golden-trophy-cup_277904-7440.jpg?w=1060"}} 
+          resizeMode="cover" 
+          style={styles.image}
+          >
+          <View style={styles.iconView}>
+        <Image 
+          source={{uri: "https://cdn-icons-png.flaticon.com/128/54/54782.png"}} 
+          style={styles.menuIcon}
+          />
+      </View>
+          <View style={styles. modalCardView}>
+           <View style={styles.modalView}>
+            <Modal
+              transparent={true}
+              visible={true}
+              >
+              <View style={styles.mensLeagueTextView}>
+                <Text style={styles. mensLeagueText}>
+                  Men's League
+                </Text>
+              </View>
+              <View style={styles.simpleTextView}>
+                <Text style={styles.simpleText}
+                  numberOfLines={3}
+                  >
+                  In publishing and graphic design, 
+                  Lorem ipsum is a placeholder text
+                  commonly used to demonstrate the 
+                  visual form of a document or a 
+                  typeface without relying on 
+                  meaningful content. Lorem 
+                  ipsum may be used as a placeholder
+                  before final copy is available.
+                </Text>
+              </View>
+              <View style={styles.timeView}>
+                <View style={styles.calenderView}>
+                  <Image 
+                    source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665645799488.svg?token=exp=1665646800~hmac=e045993da1bc8d0c4d855e246ac895cf"}} 
+                    style={styles.icons}
+                    />
+                  <Text style={styles.textStyle}>
+                    24 February
+                  </Text>
+                </View>
+                <View style={styles.calenderView}>
+                  <Image 
+                    source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665645845586.svg?token=exp=1665646800~hmac=330aa64b50a9b1b651bd88357f795762"}} 
+                    style={styles.icons}
+                    />
+                  <Text style={styles.textStyle}>
+                   18:00-20:00
+                  </Text>
+                </View>
+                <View style={styles.calenderView}>
+                  <Image 
+                    source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665645886618.svg?token=exp=1665646800~hmac=2d5533b0a125eb29480ae92b9b3622b3"}} 
+                    style={styles.icons}
+                    />
+                  <Text style={styles.textStyle}>
+                    All Levels
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.participiateBtnView}>
+                <Text style={{color: "#D0D0D0"}}>Participate $ 30</Text>
+              </View>
+            </Modal>
+          </View>
+          </View>
+          </ImageBackground>
+         </View>
+        </View>
+  )
+}
+const styles=StyleSheet.create({
+  iconView: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#EDEDED",
+    borderRadius: 7,
+    height:35,
+    width: 35,
+    marginTop: 13,
+    marginLeft: 13
+  },
+  image: {
+    height,
+    width,
+  },
+  menuIcon: {
+    height: 14,
+    width: 14
+  },
+  modalView: {
+    height: 270,
+    width: 299,
+    backgroundColor: "#1C1C1C",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20
+  },
+  mensLeagueTextView: {
+    padding: 8,
+    marginTop: 20,
+  },
+  mensLeagueText: {
+    fontSize: 20,
+    color: "#EDEDED",
+    fontWeight: "500"
+  },
+  simpleTextView: {
+    padding: 8
+  },
+  simpleText: {
+    fontSize: 13,
+    color: "#808080",
+  },
+  timeView: {
+    marginHorizontal: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row"
+  },
+  calenderView: {
+    marginTop: 5,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  icons: {
+    height: 19,
+    width: 19
+  },
+  textStyle: {
+    color: "#EDEDED",
+    fontSize: 10,
+    marginTop: 10
+  },
+  participiateBtnView: {
+    padding: 10,
+    backgroundColor: "darkgreen",
+    borderRadius: 8,
+    margin: 20,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  modalCardView: {
+    alignItems:"center",
+    justifyContent:"flex-end",
+    flex:1
+  }
+})
