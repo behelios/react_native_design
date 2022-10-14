@@ -1,0 +1,173 @@
+import React from "react"
+import { View, Text, Image, StyleSheet, FlatList, }from "react-native"
+
+export default function matchDetails(){
+  return(
+    <View style={{flex:1,backgroundColor:"#20242C"}}>
+      <View style={styles.headerView}>
+       <View style={styles.menuIconView}>
+         <View style={styles.arrowIconView}>
+           <Image source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665754372468.svg?token=exp=1665755274~hmac=76c8e6cc078cf0f9877ea0b1a00c3c33"}}
+             style={styles.arrowIcon}
+             />
+         </View>
+           <View>
+             <Text style={{color:"#808080"}}>English premire league</Text>
+         </View>
+           <View style={styles.arrowIconView}>
+             <Image source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665754522154.svg?token=exp=1665755424~hmac=8119cc6f8d2c41ee3f19b4e36781b30f"}}
+             style={styles.arrowIcon}
+             />
+         </View>
+        </View>
+        <View style={styles.liveTextView}>
+          <View style={styles.liveText}>
+            <Text style={styles.liveTextColor}>
+              Live
+            </Text>
+          </View>
+        </View>
+        <View style={styles.menuIconView}>
+          <View>
+            <Image source={{uri:"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/418px-Chelsea_FC.svg.png?20100430060248"}}
+               style={styles.image}
+               />
+            <Text style={styles.imageText}>
+              Chelsea
+            </Text>
+            <Text style={styles.imageText1}>CHE</Text>
+          </View>
+           <View>
+             <Image source={{uri:"https://cdn-user-icons.flaticon.com/81553/81553496/1665752696652.svg?token=exp=1665753598~hmac=ba6f4252090bbdc2c293e6a89b458a38"}}
+               style={styles.downArrow}
+               />
+             <Text>
+             <Text style={styles.number}>
+               2 _ 
+               </Text>
+               <Text style={styles.number1}>1</Text>
+             </Text>
+          </View>
+           <View>
+             <Image source={{uri:"https://www.arsenal.com/themes/custom/arsenal_main/images/arsenal-crest.png"}}
+               style={styles.image}
+               />
+             <Text style={styles.imageText}>
+               Arsenal
+             </Text>
+             <Text style={styles.imageText1}>ARS</Text>
+          </View>
+        </View>
+      </View>
+      <View style={{alignItems:"center"}}>
+        <View style={styles.timeView}>
+          <Image source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665756374161.svg?token=exp=1665757276~hmac=593efdfc0e538eaff487792de6cd80c3"}}
+            style={styles.timeIcon}
+            />
+          <Text style={styles.timeText}>
+            08:30 pm
+          </Text>
+        </View>
+      </View>
+      
+      <View></View>
+      <View></View>
+      <View></View>
+    </View>
+  )
+}
+const styles=StyleSheet.create({
+  headerView: {
+    height: 150,
+    backgroundColor: "#3C4150",
+    transform: [{scaleX: 1.7}],
+    borderBottomLeftRadius: 200,
+    borderBottomRightRadius: 200,
+  },
+  menuIconView: {
+    padding: 8,
+    paddingHorizontal: 15,
+    overflow: 'hidden',
+    transform: [{scaleX: 0.6}],
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  arrowIconView: {
+    height: 30,
+    width: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#54586A",
+    borderRadius: 50
+  },
+  arrowIcon: {
+    height: 15,
+    width: 15
+  },
+  liveTextView: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
+    transform: [{scaleX: 0.6}],
+  },
+  liveText: {
+    backgroundColor: "#D1C2F3",
+    borderRadius: 30,
+    padding: 2,
+    paddingHorizontal: 12
+  },
+  liveTextColor: {
+    color: "#5E43B2",
+    fontSize: 11
+  },
+  number: {
+    color: "#FDFDFD",
+    fontSize: 20,
+    fontWeight: "500"
+  },
+  number1: {
+    color: "#AAAAAA",
+    fontSize: 20,
+    fontWeight: "500"
+  },
+  downArrow: {
+    height: 7,
+    width: 7,
+    marginLeft: 3
+  },
+  image: {
+    height: 45,
+    width: 45,
+    marginTop: 25
+  },
+  imageText: {
+    fontSize: 12,
+    color: "#FDFDFD",
+    marginTop: 7
+  },
+  imageText1: {
+    fontSize: 8,
+    color: "#FDFDFD",
+    marginLeft:11,
+    marginTop: 3
+  },
+  timeView: {
+    backgroundColor: "#424651",
+    borderRadius: 30,
+    paddingHorizontal: 10,
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 10
+  },
+  timeIcon: {
+    height: 12,
+    width: 12,
+    margin: 3,
+    marginRight: 5
+  },
+  timeText: {
+    fontSize: 10,
+    color:"#F3F3F3"
+  }
+})
