@@ -1,0 +1,334 @@
+import React from "react";
+import { View, StyleSheet, Text, Image, ImageBackground, FlatList }from "react-native";
+const data = [
+  {
+    text: "Football",
+    setColor: "#7A55E8",
+    image: "https://pngimg.com/uploads/football/small/football_PNG1085.png"
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-vKw7oSs0oRbDYcm6KX2Hrx43p3hO8Rtpg&usqp=CAU"
+  },
+{
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW5jNjQ9cnEg4lWKuH-HXdW0rPFDipTUuoEA&usqp=CAU"
+  },
+{
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iTJDJ3Z8chFsagFBAX5_d4rCUXZwPrwVdQ&usqp=CAU"
+  },
+{
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtrX7P6zsQy6R_t3ZtlN8TY-gMx7WCA13ouIAM-xJ-8gssBgL2Gop5bik&s=10"
+  },
+{
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUlTphUh8e3P4nigIXGl8BQNt2LbhIZA9WWw&usqp=CAU"
+  },
+]
+const data2 = [
+  {
+    image3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-vKw7oSs0oRbDYcm6KX2Hrx43p3hO8Rtpg&usqp=CAU",
+    image2: "https://i.pinimg.com/originals/50/e5/56/50e556e79c1207b185d342d9e8cc7549.png",
+    image1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9TI_Zpo3lOq8jixyrS03KQ3gmnRrAt3USQA&usqp=CAU",
+    text1: "Mumbai cricket 1",
+    text2: "Asia cricket 2",
+  },
+  {
+    image3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUlTphUh8e3P4nigIXGl8BQNt2LbhIZA9WWw&usqp=CAU",
+    image2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2eHe1NlZCFLwrioNiNgTfAJWV_7zkXB0Sw&usqp=CAU",
+    image1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9TI_Zpo3lOq8jixyrS03KQ3gmnRrAt3USQA&usqp=CAU",
+    text1: "Mumbai cricket 1",
+    text2: "Asia cricket 2",
+  },
+  {
+    image3: "https://i.pinimg.com/originals/50/e5/56/50e556e79c1207b185d342d9e8cc7549.png",
+    image2: "https://i.pinimg.com/originals/50/e5/56/50e556e79c1207b185d342d9e8cc7549.png",
+    image1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9TI_Zpo3lOq8jixyrS03KQ3gmnRrAt3USQA&usqp=CAU",
+    text1: "Mumbai criket 1",
+    text2: "Asia criket 2",
+  },
+  {
+    image3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUlTphUh8e3P4nigIXGl8BQNt2LbhIZA9WWw&usqp=CAU",
+    image2: "https://i.pinimg.com/originals/50/e5/56/50e556e79c1207b185d342d9e8cc7549.png",
+    image1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9TI_Zpo3lOq8jixyrS03KQ3gmnRrAt3USQA&usqp=CAU",
+    text1: "Mumbai cricket 1",
+    text2: "Asia cricket 2",
+  },
+]
+export default function sportScreen(){
+  function dataList({item}){
+    return(
+      <View>
+        <View style={[styles.toolsList,{backgroundColor:item.setColor}]}>
+        <Image 
+          source={{uri:item.image}}
+          style={styles.toolsIcon}
+          />
+        </View>
+          <Text style={styles.textStyle}>
+            {item.text}
+        </Text>
+      </View>
+    )
+  }
+  function list({item}){
+    return(
+      <View style={styles.cardDesign}>
+        <View style={styles.onCardView}>
+          <Image source={{uri:item.image3}}
+            style={styles.criketIcon}
+            />
+        </View>
+        <View style={{flexDirection:"row"}}>
+          <Image source={{uri:item.image1}}
+            style={styles.criketIcon}
+            />
+          <Image source={{uri:item.image2}}
+            style={styles.criketIcon}
+            />
+        </View>
+        <View style={{marginTop: 17}}>
+          <Text style={styles.asiaCupText}>
+            {item.text1}
+          </Text>
+          <Text style={styles.asiaCupText}>
+            {item.text2}
+          </Text>
+        </View>
+      </View>
+    )
+  }
+  return(
+    <View style={{flex:1,backgroundColor:"#212631"}}>
+      <View style={styles.headerView}>
+        <View>
+          <Image 
+            source={{uri:"https://cdn-user-icons.flaticon.com/81553/81553496/1665726310279.svg?token=exp=1665727212~hmac=204a8481e4de657cb5d7c10c8eea1086"}}
+            style={styles.menuIcon}
+            />
+        </View>
+        <View style={styles.sportTextView}>
+          <Image 
+            source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665727075571.svg?token=exp=1665727977~hmac=141cfd115baeddc7f9a02eb6fd029ffb"}}
+            style={styles.circleIcon}
+            />
+          <Text style={styles.sportTextDesign}>
+            Sport
+          </Text>
+        </View>
+        <View>
+          <Image
+            source={{uri: "https://cdn-user-icons.flaticon.com/81553/81553496/1665726160709.svg?token=exp=1665727062~hmac=26cdff9e858d772bb175c3344ad53512"}}
+            style={styles.menuIcon}
+            />
+        </View>
+      </View>
+      <View style={styles.imageView}>
+         <View style={styles.imageViewIcon}>
+           <Image source={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2eHe1NlZCFLwrioNiNgTfAJWV_7zkXB0Sw&usqp=CAU"}}
+             style={styles.Icon}
+             />
+        </View>
+         <View>
+           <ImageBackground source={{uri:"https://www.pngarts.com/files/5/Cartoon-Avatar-Transparent-Background-PNG.png"}}
+             style={styles.imageDesign}
+             />
+           <View style={styles.onImageView}>
+             <Text style={{fontSize:12,color:"#FDFDFD"}}>
+               Today 08:30 pm
+             </Text>
+           </View>
+        </View>
+         <View style={styles.imageViewIcon}>
+          <Image source={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2eHe1NlZCFLwrioNiNgTfAJWV_7zkXB0Sw&usqp=CAU"}}
+             style={styles.Icon}
+             />
+        </View>
+      </View>
+      <View>
+        <Text style={styles.sportText2}
+          >Sport
+        </Text>
+      </View>
+      <View>
+        <FlatList
+          data={data}
+          renderItem={dataList}
+          horizontal={true}
+          />
+      </View>
+      <View style={styles.liveMatchTextView}>
+       <View>
+         <Text style={styles.liveMatchText}>
+           Live Matches
+         </Text>
+        </View>
+        <View style={styles.allTextView}>
+          <Image source={{uri:"https://cdn-user-icons.flaticon.com/81553/81553496/1665733998350.svg?token=exp=1665734900~hmac=97ff6a181248aa5d8548c18927e3f4e5"}}
+            style={styles.dotIcon}
+            />
+          <Text style={styles.allText}>
+            All
+          </Text>
+          <Image 
+            source={{uri:"https://cdn-user-icons.flaticon.com/81553/81553496/1665733360875.svg?token=exp=1665734263~hmac=ce3725070ef6ab5d73575bd01c26ef42"}}
+            style={styles.arrowIcon}
+            />
+        </View>
+      </View>
+      <View style={{marginTop: 10}}>
+        <FlatList
+          data={data2}
+          renderItem={list}
+          horizontal={true}
+          />
+      </View>
+    </View>
+  )
+}
+const styles = StyleSheet.create({
+  headerView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 15,
+    paddingHorizontal: 20
+  },
+  menuIcon: {
+    height: 20,
+    width: 20
+  },
+  circleIcon: {
+    height: 18,
+    width: 18,
+    marginRight: 5
+  },
+  sportTextDesign: {
+    color: "#cccccc",
+    fontSize: 18,
+  },
+  sportText2: {
+    color:"#cccccc",
+    marginLeft:15,
+    fontSize: 16,
+    fontWeight:"500"
+  },
+  sportTextView: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  imageView: {
+    height: 140,
+    margin: 15,
+    marginBottom: 20,
+    alignItems: "center",
+    paddingHorizontal: 20,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    borderRadius: 10,
+    backgroundColor: "#7548F7"
+  },
+  imageViewIcon: {
+    height: 45,
+    width: 45,
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#8D62D1"
+  },
+  Icon: {
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+  },
+  imageDesign: {
+    height: 140,
+    width: 120
+  },
+  onImageView: {
+    padding:3,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor:"#202842",
+    borderRadius: 20,
+    marginBottom: 12
+  },
+  toolsList: {
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 15,
+    marginTop: 15
+  },
+  toolsIcon: {
+    height: 25,
+    width: 25,
+    borderRadius: 50
+  },
+  textStyle: {
+    color:"#cccccc",
+    marginLeft:15,
+    fontSize:12,
+    marginTop: 10
+  },
+  liveMatchTextView: {
+    paddingHorizontal: 15,
+    paddingTop: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  liveMatchText: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#cccccc"
+  },
+  allTextView: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  allText: {
+    color: "#cccccc",
+    fontSize: 11,
+    marginLeft: 6
+  },
+  arrowIcon: {
+    height: 13,
+    width: 13,
+    marginLeft: 6
+  },
+  dotIcon: {
+    height: 20,
+    width: 20
+  },
+  cardDesign: {
+    paddingBottom: 18,
+    paddingLeft: 10,
+    height: 130,
+    width: 110,
+    marginLeft: 15,
+    marginTop: 17,
+    borderRadius: 7,
+    backgroundColor: "#383838",
+    justifyContent: "flex-end"
+  },
+  criketIcon: {
+    height: 30,
+    width: 30,
+    borderRadius: 50,
+    margin: 5,
+    marginBottom:0
+  },
+  asiaCupText: {
+    fontSize: 11,
+    color: "#cccccc"
+  },
+  onCardView: {
+    marginLeft: 23,
+    marginBottom:11,
+    height: 45,
+    width: 45,
+    borderRadius: 50,
+  }
+})
